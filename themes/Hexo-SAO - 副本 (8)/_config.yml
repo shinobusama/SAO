@@ -1,0 +1,26 @@
+
+# html lang
+language: 
+
+# main menu navigation
+menu:
+  Home: /
+  Archives: /archives
+  Contact: https://github.com/shinobusama
+  About: /about
+
+# Miscelaneous
+favicon: /favicon.ico
+
+# stylesheets loaded in the <head>
+stylesheets:
+- /css/Hexo-SAO.css
+- /css/style.css
+- /css/loading.css
+
+# scripts loaded in the end of the body
+scripts:
+- /js/jquery.js
+- /js/Hexo-SAO.js
+- /js/changecolor.js
+

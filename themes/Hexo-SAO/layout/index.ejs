@@ -1,0 +1,11 @@
+<% page.posts.each(function(article) { %>
+  <article id="post">
+    <h1><%=article.title%></h1>
+    <span><%=date(article.date,"dddd, MMMM Do YYYY")%></span>
+    <div id="post_content">
+      <%-article.content%>
+    </div>
+    <a class="tag" href="<%="tags"+"/"+article.Tag%>">#<%=article.Tag%></a>
+  </article>
+<% }); %>
+<%-partial('partials/pagination')%>

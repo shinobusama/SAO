@@ -1,0 +1,11 @@
+<article id="page">
+  <article id="post">
+  	<h1><%=page.title%></h1>
+  	<span><%=date(page.date,"dddd, MMMM Do YYYY")%></span>
+  	<div id="post_content">
+  		<%-page.content%>
+  	</div>
+ 	<a class="tag" href="<%="/tags"+"/"+page.Tag%>">#<%=page.Tag%></a>
+	</article>
+</article>
+

@@ -1,0 +1,38 @@
+<div id="menu-outer">
+  <div id="menu-inner">
+    <div class="menu-icon">
+      <ul class="menu-icon-ul">
+        <li class="menu-icon-li">
+          <a class="menu-icon-li-span menu-icon-1"></a>
+          <span class="tip-table"></span>
+        </li>
+        <li class="menu-icon-li">
+          <a class="menu-icon-li-span menu-icon-2"></a>
+          <span class="tip-table"></span>
+        </li>
+        <li class="menu-icon-li">
+          <a class="menu-icon-li-span menu-icon-3"></a>
+          <span class="tip-table"></span>
+        </li>
+        <li class="menu-icon-li">
+          <a class="menu-icon-li-span menu-icon-4"></a>
+          <span class="tip-table"></span>
+        </li>
+      </ul>
+    </div>
+    <ul class="menu-inner-list">
+      <% Object.keys(theme.menu).forEach(function(key) { %>
+      <li class="menu-inner-list-li"><a class="menu-li-a <%="menu-li-"+key%>" href="<%=theme.menu[key]%>"><%=key%></a>
+      </li>
+      <% }); %>
+      <div class="myCanvas">
+        <ul class="myCanvas-ul">
+          <li class="myCanvas-li"></li>
+          <li class="myCanvas-li"></li>
+          <li class="myCanvas-li"></li>
+          <li class="myCanvas-li"></li>
+        </ul>
+      </div>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,124 @@
+
+<%
+var pageTitle = page.title || config.subtitle || '';
+if (is_archive()) pageTitle = 'Archives';
+if (is_tag()) pageTitle = 'Tag: ' + page.tag;
+if (is_category()) pageTitle = 'Category: ' + page.category;
+if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
+if (is_year()) pageTitle += ': ' + page.year;
+pageTitle += ' [ ' + config.title + ' ]';
+%>
+
+<!DOCTYPE html>
+<html lang="<%=config.language%>">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+  <title><%=pageTitle%></title>
+  <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
+    <!-- stylesheets list from config.yml -->
+    <% theme.stylesheets.forEach(function(url) { %>
+      <link rel="stylesheet" href="<%=url%>">
+    <% }); %>
+  <% } %>
+</head>
+<body>
+
+<div class="linkstart">
+  <%-partial('loading')%>
+  <p class="link">Link Start</p>
+</div>
+
+<div class="welcome-wrapper">
+  <span class="welcome">Welcome to Sworld Art Online!</span>
+</div>
+
+<audio class="bgmuisc" preload>
+  <source src="http://shinobusama.github.io/video/LinkStart.ALO.Leafa.wav">
+</audio>
+
+<div class="menu-button">
+  <span class="menu-button-inner"></span>
+</div>
+
+<div class="myinfo-button">
+  <div class="info">
+    <h1>kirito</h1>
+    <div class="info-img"></div>
+    <div class="info-text">
+      <p>Welcome to SAO</p>
+    </div>
+  </div>
+</div>
+
+<div id="menu-outer">
+  <div id="menu-inner">
+    <div class="menu-icon">
+      <ul class="menu-icon-ul">
+        <li class="menu-icon-li">
+          <a class="menu-icon-li-span menu-icon-1"></a>
+          <span class="tip-table"></span>
+        </li>
+        <li class="menu-icon-li">
+          <a class="menu-icon-li-span menu-icon-2"></a>
+          <span class="tip-table"></span>
+        </li>
+        <li class="menu-icon-li">
+          <a class="menu-icon-li-span menu-icon-3"></a>
+          <span class="tip-table"></span>
+        </li>
+        <li class="menu-icon-li">
+          <a class="menu-icon-li-span menu-icon-4"></a>
+          <span class="tip-table"></span>
+        </li>
+        <li class="menu-icon-li">
+          <a class="menu-icon-li-span menu-icon-5"></a>
+          <span class="tip-table"></span>
+        </li>
+        <li class="menu-icon-li">
+          <a class="menu-icon-li-span menu-icon-6"></a>
+          <span class="tip-table"></span>
+        </li>
+      </ul>
+    </div>
+    <ul class="menu-inner-list">
+      <% Object.keys(theme.menu).forEach(function(key) { %>
+      <li class="menu-inner-list-li"><a class="menu-li-a <%="menu-li-"+key%>" href="<%=theme.menu[key]%>"><%=key%></a>
+      </li>
+      <% }); %>
+      <div class="myCanvas">
+        <ul class="myCanvas-ul">
+          <li class="myCanvas-li"></li>
+          <li class="myCanvas-li"></li>
+          <li class="myCanvas-li"></li>
+          <li class="myCanvas-li"></li>
+          <li class="myCanvas-li"></li>
+          <li class="myCanvas-li"></li>
+        </ul>
+      </div>
+    </ul>
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    <%- body %>
+  </div>
+</div>
+
+<div id="bottom-outer">
+  <p id="bottom-inner">
+    Site by <%=config.author%> using
+  </p>
+</div>
+
+<% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
+  <!-- scripts list from theme config.yml -->
+  <% theme.scripts.forEach(function(url) { %>
+    <script src="<%=url%>"></script>
+  <% }); %>
+<% } %>
+
+</body>
+</html>

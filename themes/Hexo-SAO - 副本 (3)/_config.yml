@@ -1,0 +1,27 @@
+
+# html lang
+language: 
+
+# main menu navigation
+menu:
+  Home: /
+  Categories: /categories
+  Contact: /contact
+  Archives: /archives
+  Tag: /tag
+  About: /about
+
+# Miscelaneous
+favicon: /favicon.ico
+
+# stylesheets loaded in the <head>
+stylesheets:
+- /css/Hexo-SAO.css
+- /css/style.css
+- /css/loading.css
+
+# scripts loaded in the end of the body
+scripts:
+- /js/jquery.js
+- /js/Hexo-SAO.js
+
